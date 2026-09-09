@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Test') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Jenkins successfully cloned my GitHub repository!'
+                bat 'docker build -t fastapi-k8s-demo:v1 .'
             }
         }
     }
